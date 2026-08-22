@@ -24,3 +24,26 @@ list.c:43:13: error: returning ‘int *’ from a function with incompatible ret
    43 |      return list;
       |             ^~~~
 df698c2
+Sat Aug 22 01:18:30 AM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:38:5: error: unknown type name ‘list’; did you mean ‘List’?
+   38 |     list *list = malloc(sizeof(list));
+      |     ^~~~
+      |     List
+list.c:39:9: error: request for member ‘head’ in something not a structure or union
+   39 |     list->head = NULL;
+      |         ^~
+list.c:40:9: error: request for member ‘tail’ in something not a structure or union
+   40 |     list->tail = 0;
+      |         ^~
+list.c:41:9: error: request for member ‘current’ in something not a structure or union
+   41 |     list->current = NULL;
+      |         ^~
+list.c:43:13: error: returning ‘int *’ from a function with incompatible return type ‘List *’ {aka ‘struct List *’} [-Wincompatible-pointer-types]
+   43 |      return list;
+      |             ^~~~
+558438d
