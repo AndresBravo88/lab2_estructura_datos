@@ -47,3 +47,29 @@ list.c:43:13: error: returning ‘int *’ from a function with incompatible ret
    43 |      return list;
       |             ^~~~
 558438d
+Sat Aug 22 01:18:59 AM UTC 2026: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:39:9: error: array subscript ‘List {aka struct List}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds=]
+   39 |     list->head = NULL;
+      |         ^~
+list.c:38:18: note: object of size 8 allocated by ‘malloc’
+   38 |     List *list = malloc(sizeof(list));
+      |                  ^~~~~~~~~~~~~~~~~~~~
+list.c:40:9: error: array subscript ‘List {aka struct List}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds=]
+   40 |     list->tail = 0;
+      |         ^~
+list.c:38:18: note: object of size 8 allocated by ‘malloc’
+   38 |     List *list = malloc(sizeof(list));
+      |                  ^~~~~~~~~~~~~~~~~~~~
+list.c:41:9: error: array subscript ‘List {aka struct List}[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds=]
+   41 |     list->current = NULL;
+      |         ^~
+list.c:38:18: note: object of size 8 allocated by ‘malloc’
+   38 |     List *list = malloc(sizeof(list));
+      |                  ^~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+6d43e99
